@@ -2,14 +2,16 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      host: 'postgres://localhost/diary_analyzer',
+      host: `postgres://localhost/${process.env.DB_NAME}`,
       user: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD
     },
     migrations: {
       directory: './migrations'
     },
-    seeds: './seeds'
+    seeds: {
+      directory: './seeds'
+    }
   },
 
   production: {
