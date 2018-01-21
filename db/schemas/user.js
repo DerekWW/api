@@ -1,7 +1,15 @@
 const mongoose = require('../mongoose')
 
 let userSchema = mongoose.Schema({
-  name: String
+  firstName: {
+    type:String,
+    required: true
+  },
+  lastName: {
+    type:String,
+    required: true
+  },
+  dogs: []
 })
 
 module.exports = mongoose.model('User', userSchema)
