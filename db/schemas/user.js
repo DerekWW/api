@@ -9,7 +9,7 @@ let userSchema = mongoose.Schema({
     type:String,
     required: true
   },
-  dogs: []
+  dogs: [{type: mongoose.Schema.Types.ObjectId, ref: 'Dog'}]
 })
 
 module.exports = mongoose.model('User', userSchema)
